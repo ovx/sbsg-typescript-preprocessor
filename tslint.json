@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "no-constant-condition": true,
+    "semicolon": [true, "never"],
+    "quotemark": [true, "single", "jsx-double"],
+    "indent": [true, "spaces", 4],
+    "object-curly-spacing": [false, "error", "never"],
+    "whitespace": [true, "check-branch", "check-operator", "check-typecast", "check-type-operator", "check-rest-spread", "check-separator"],
+    "space-in-parens": [true, "never"]
+  }
+}

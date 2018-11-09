@@ -1,0 +1,19 @@
+{
+	"name": "typescript-preprocessor",
+	"version": "1.0.0",
+	"main": "dist/typescriptPreprocessor.js",
+	"types": "dist/typescriptPreprocessor.d.ts",
+	"scripts": {
+		"clean": "rm dist -r",
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"dependencies": {
+		"@types/joi": "^13.4.2",
+		"@types/node": "^10.5.8",
+		"fast-glob": "^2.2.2",
+		"joi": "^13.6.0",
+		"typescript": "^3.0.1",
+		"typescript-parser": "^2.6.1"
+	}
+}
