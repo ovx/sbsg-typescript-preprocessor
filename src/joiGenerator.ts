@@ -54,6 +54,11 @@ async function processTsPropertyTypePrimitive(customProperties: CustomProperties
         return Joi.array().items(innerType)
     }
 
+    // arrow function
+    if (rawType.includes('=>')) {
+        return Joi.any()
+    }
+
     if (basicTypeValidators[rawType]) {
         return basicTypeValidators[rawType]
     }
@@ -177,6 +182,10 @@ async function processTsProperty(customProperties: CustomProperties, propertyDec
 
 export async function processTsDeclarationInterface(customProperties: CustomProperties, declaration: InterfaceDeclaration): Promise<Object> {
     const joiKeysObject = {}
+    
+    if (!declaration.properties) {
+        return joiKeysObject
+    }
 
     const promises = declaration.properties.map(async propertyDeclaration => {
         joiKeysObject[propertyDeclaration.name] = await processTsProperty(customProperties, propertyDeclaration)

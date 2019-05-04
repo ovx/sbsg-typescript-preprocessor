@@ -81,7 +81,8 @@ async function convertParsedFilesToJoiValidators(customProperties: CustomPropert
     validators.forEach((fileResultObject) => {
         return Object.keys(fileResultObject).forEach(key => {
             if (result[key]) {
-                throw 'Multiple definition of "' + key + '" in selected files'
+                // throw 'Multiple definition of "' + key + '" in selected files'
+                console.warn('Multiple definition of "' + key + '" in selected files')
             }
 
             result[key] = fileResultObject[key]
